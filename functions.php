@@ -122,31 +122,31 @@ add_action( 'init', function () {
         'rewrite'           => [ 'slug' => 'project-category' ],
         'show_in_rest'      => true,
     ] );
+
+    // Project Tags
+    register_taxonomy( 'project_tag', 'project', [
+        'labels' => [
+            'name'          => __( 'Project Tags', 'sanjeep-portfolio' ),
+            'singular_name' => __( 'Project Tag', 'sanjeep-portfolio' ),
+            'search_items'  => __( 'Search Tags', 'sanjeep-portfolio' ),
+            'all_items'     => __( 'All Tags', 'sanjeep-portfolio' ),
+            'edit_item'     => __( 'Edit Tag', 'sanjeep-portfolio' ),
+            'update_item'   => __( 'Update Tag', 'sanjeep-portfolio' ),
+            'add_new_item'  => __( 'Add New Tag', 'sanjeep-portfolio' ),
+            'menu_name'     => __( 'Tags', 'sanjeep-portfolio' ),
+        ],
+        'hierarchical'      => false,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => [ 'slug' => 'project-tag' ],
+        'show_in_rest'      => true,
+    ] );
 } );
 
-/* ─────────────────────────────────────────────
-   6. HELPERS
-───────────────────────────────────────────── */
-
-/**
- * Get featured projects for homepage.
- */
-function sp_get_featured_projects( int $limit = 5 ): WP_Query {
-    return new WP_Query( [
-        'post_type'      => 'project',
-        'post_status'    => 'publish',
-        'posts_per_page' => $limit,
-        'meta_query'     => [
-            [ 'key' => 'proj_featured', 'value' => '1', 'compare' => '=' ],
-        ],
-        'meta_key'       => 'proj_order',
-        'orderby'        => 'meta_value_num',
-        'order'          => 'ASC',
-    ] );
-}
 
 /* ─────────────────────────────────────────────
-   7. REMOVE UNWANTED ADMIN ITEMS
+   5. REMOVE UNWANTED ADMIN ITEMS
 ───────────────────────────────────────────── */
 add_action( 'admin_menu', function () {
     // Keep it clean — remove unused default menu items
