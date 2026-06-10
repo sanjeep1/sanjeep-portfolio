@@ -62,7 +62,7 @@ $items = ! empty( $services ) ? $services : $default_services;
                 <?php echo esc_html( $subtitle ); ?>
             </div>
             <h2 id="services-heading" class="section-title mb-0">
-                <?php echo esc_html( $heading ); ?>
+                <?php echo esc_html( $heading ); ?><span class="text-sp-accent">.</span>
             </h2>
         </div>
         <?php if ( $content ) : ?>

@@ -30,7 +30,7 @@ $default_content = '<p>I\'m a <strong>frontend developer</strong> from Kathmandu
         </div>
 
         <h2 id="about-heading" class="section-title reveal">
-            <?php echo esc_html( $heading ); ?>
+            <?php echo esc_html( $heading ); ?><span class="text-sp-accent">.</span>
         </h2>
 
         <div class="about-text reveal">

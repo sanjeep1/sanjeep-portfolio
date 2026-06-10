@@ -27,7 +27,7 @@ $track_items = array_merge( $items, $items );
 
     <div class="max-w-screen-xl mx-auto mb-10 reveal">
         <div class="section-label"><?php echo $tech_subtitle; ?></div>
-        <h2 id="stack-heading" class="section-title mb-0"><?php echo $tech_heading; ?></h2>
+        <h2 id="stack-heading" class="section-title mb-0"><?php echo $tech_heading; ?><span class="text-sp-accent">.</span></h2>
     </div>
 
     <!-- Marquee -->

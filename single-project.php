@@ -88,7 +88,7 @@ while (have_posts()):
 
             <!-- Title -->
             <h1 id="project-title" class="font-display font-extrabold leading-none text-sp-text-primary reveal"
-                style="font-size:clamp(2.8rem,7vw,6rem);letter-spacing:-0.04em">
+                style="font-size:clamp(2rem,7vw,4rem);letter-spacing:-0.04em">
                 <?php the_title(); ?>
             </h1>
 

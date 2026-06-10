@@ -7,6 +7,7 @@ $subtitle   = get_field( 'contact_subtitle');
 $heading   = get_field( 'contact_heading');
 $highlight = get_field( 'contact_highlight');
 $contact_content= get_field( 'contact_content');
+$contact_shortcode= get_field( 'contact_shortcode');
 $email     = get_field( 'contact_email');
 $phone     = get_field( 'contact_phone');
 $github    = get_field( 'contact_github');
@@ -25,7 +26,7 @@ $linkedin  = get_field( 'contact_linkedin');
         </div>
 
         <h2 id="contact-heading" class="contact-big reveal">
-            <?php echo $heading; ?>
+            <?php echo $heading; ?><span class="text-sp-accent">.</span>
         </h2>
 
         <?php if ( $contact_content ) : ?>
@@ -91,6 +92,6 @@ $linkedin  = get_field( 'contact_linkedin');
 
     <!-- Right: Contact form -->
     <div class="reveal">
-        <?php echo do_shortcode('[contact-form-7 id="688163d" title="Contact Form"]'); ?>
+        <?php echo do_shortcode($contact_shortcode); ?>
     </div>
 </section>

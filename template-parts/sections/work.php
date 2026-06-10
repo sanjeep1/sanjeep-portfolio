@@ -23,7 +23,7 @@ $choose_projects   = get_field('choose_projects'); // Relationship field
 
             <?php if ($projects_heading) : ?>
                 <h2 id="work-heading" class="section-title mb-0">
-                    <?php echo esc_html($projects_heading); ?>
+                    <?php echo esc_html($projects_heading); ?><span class="text-sp-accent">.</span>
                 </h2>
             <?php endif; ?>
         </div>
