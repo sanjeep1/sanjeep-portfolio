@@ -61,7 +61,7 @@ $services = function_exists( 'get_field' ) ? get_field( 'services_list') : [];
                     $svg = file_get_contents(get_attached_file($icon));
                     if ($svg) :
                 ?>
-                    <div class="mb-5 text-[2rem] leading-none" aria-hidden="true">
+                    <div class="mb-10 text-[2rem] leading-none" aria-hidden="true">
                         <div class="w-8 h-8 text-current">
                             <?php echo $svg; ?>
                         </div>
