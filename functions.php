@@ -11,7 +11,7 @@ define( 'SP_URI',       get_template_directory_uri() );
 define( 'SP_ASSETS',    SP_URI . '/assets' );
 
 /* ─────────────────────────────────────────────
-   1. THEME SETUP
+   THEME SETUP
 ───────────────────────────────────────────── */
 add_action( 'after_setup_theme', function () {
     load_theme_textdomain( 'sanjeep-portfolio', SP_DIR . '/languages' );
@@ -33,7 +33,7 @@ add_action( 'after_setup_theme', function () {
 } );
 
 /* ─────────────────────────────────────────────
-   2. ENQUEUE SCRIPTS & STYLES
+   ENQUEUE SCRIPTS & STYLES
 ───────────────────────────────────────────── */
 add_action( 'wp_enqueue_scripts', function () {
     // Google Fonts
@@ -70,7 +70,7 @@ add_action( 'wp_enqueue_scripts', function () {
 } );
 
 /* ─────────────────────────────────────────────
-   4. REGISTER CUSTOM POST TYPE: Projects
+   REGISTER CUSTOM POST TYPE: Projects
 ───────────────────────────────────────────── */
 add_action( 'init', function () {
     register_post_type( 'project', [
@@ -146,7 +146,7 @@ add_action( 'init', function () {
 
 
 /* ─────────────────────────────────────────────
-   5. REMOVE UNWANTED ADMIN ITEMS
+   REMOVE UNWANTED ADMIN ITEMS
 ───────────────────────────────────────────── */
 add_action( 'admin_menu', function () {
     // Keep it clean — remove unused default menu items
@@ -158,3 +158,12 @@ remove_action( 'wp_head', 'wp_generator' );
 remove_action( 'wp_head', 'wlwmanifest_link' );
 remove_action( 'wp_head', 'rsd_link' );
 remove_action( 'wp_head', 'wp_shortlink_wp_head' );
+
+/* ─────────────────────────────────────────────
+   ALLOW SVG UPLOADS
+───────────────────────────────────────────── */
+function allow_svg_upload($mimes) {
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+}
+add_filter('upload_mimes', 'allow_svg_upload');
