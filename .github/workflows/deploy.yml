@@ -6,38 +6,34 @@ on:
       - main
 
 jobs:
-  ftp-deploy:
-    name: FTP Deploy Job
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Deploy to FTP server
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Tailwind CSS
+        run: npm run build
+
+      - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: ${{ secrets.FTP_PORT }}
-          
-          # Path on your server (IMPORTANT)
           server-dir: /htdocs/wp-content/themes/sanjeep-portfolio-theme/
-
-          # Local directory to upload
-          local-dir: ./
-
-          # Optional but recommended
-          dangerous-clean-slate: false
-
-          # Prevent uploading unnecessary files
+          
           exclude: |
             **/.git*
-            **/.git*/**
-            **/node_modules/**
-            **/vendor/**
             **/.github/**
-            **/README.md**
-            **/.DS_Store**
-            **/npm-debug.log*
+            **/node_modules/**
