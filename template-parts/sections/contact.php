@@ -14,10 +14,7 @@ $github    = get_field( 'contact_github');
 $linkedin  = get_field( 'contact_linkedin');
 ?>
 
-<section id="contact"
-    class="py-28 px-16 grid grid-cols-1 lg:grid-cols-2 gap-24 items-start
-           max-w-screen-xl mx-auto"
-    aria-labelledby="contact-heading">
+<section id="contact" class="py-28 px-16 grid grid-cols-1 lg:grid-cols-2 gap-24 items-start max-w-screen-xl mx-auto" aria-labelledby="contact-heading">
 
     <!-- Left: CTA + links -->
     <div>
@@ -46,7 +43,9 @@ $linkedin  = get_field( 'contact_linkedin');
                     <?php echo esc_html( $email ); ?>
                     <span class="contact-link-badge">Email</span>
                 </span>
-                <span class="contact-link-arrow" aria-hidden="true">↗</span>
+                <span class="contact-link-arrow" aria-hidden="true">
+                    <svg fill="currentColor" width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.293,20.707a1,1,0,0,1,0-1.414L17.586,5H12a1,1,0,0,1,0-2h8a1,1,0,0,1,1,1v8a1,1,0,0,1-2,0V6.414L4.707,20.707a1,1,0,0,1-1.414,0Z"/></svg>
+                </span>
             </a>
             <?php endif; ?>
 
@@ -57,7 +56,9 @@ $linkedin  = get_field( 'contact_linkedin');
                     <?php echo esc_html( $phone ); ?>
                     <span class="contact-link-badge">Phone</span>
                 </span>
-                <span class="contact-link-arrow" aria-hidden="true">↗</span>
+                <span class="contact-link-arrow" aria-hidden="true">
+                    <svg fill="currentColor" width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.293,20.707a1,1,0,0,1,0-1.414L17.586,5H12a1,1,0,0,1,0-2h8a1,1,0,0,1,1,1v8a1,1,0,0,1-2,0V6.414L4.707,20.707a1,1,0,0,1-1.414,0Z"/></svg>
+                </span>
             </a>
             <?php endif; ?>
 
@@ -70,7 +71,9 @@ $linkedin  = get_field( 'contact_linkedin');
                     <?php echo esc_html( str_replace( 'https://', '', $github ) ); ?>
                     <span class="contact-link-badge">GitHub</span>
                 </span>
-                <span class="contact-link-arrow" aria-hidden="true">↗</span>
+                <span class="contact-link-arrow" aria-hidden="true">
+                    <svg fill="currentColor" width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.293,20.707a1,1,0,0,1,0-1.414L17.586,5H12a1,1,0,0,1,0-2h8a1,1,0,0,1,1,1v8a1,1,0,0,1-2,0V6.414L4.707,20.707a1,1,0,0,1-1.414,0Z"/></svg>
+                </span>
             </a>
             <?php endif; ?>
 
@@ -83,7 +86,9 @@ $linkedin  = get_field( 'contact_linkedin');
                     <?php esc_html_e( 'Sanjeep Banjara', 'sanjeep-portfolio' ); ?>
                     <span class="contact-link-badge">LinkedIn</span>
                 </span>
-                <span class="contact-link-arrow" aria-hidden="true">↗</span>
+                <span class="contact-link-arrow" aria-hidden="true">
+                    <svg fill="currentColor" width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.293,20.707a1,1,0,0,1,0-1.414L17.586,5H12a1,1,0,0,1,0-2h8a1,1,0,0,1,1,1v8a1,1,0,0,1-2,0V6.414L4.707,20.707a1,1,0,0,1-1.414,0Z"/></svg>
+                </span>
             </a>
             <?php endif; ?>
 

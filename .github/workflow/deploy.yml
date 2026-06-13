@@ -1,0 +1,43 @@
+name: Deploy to Production (FTP)
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ftp-deploy:
+    name: FTP Deploy Job
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to FTP server
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: ${{ secrets.FTP_PORT }}
+          
+          # Path on your server (IMPORTANT)
+          server-dir: /htdocs/wp-content/themes/sanjeep-portfolio-theme/
+
+          # Local directory to upload
+          local-dir: ./
+
+          # Optional but recommended
+          dangerous-clean-slate: false
+
+          # Prevent uploading unnecessary files
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/vendor/**
+            **/.github/**
+            **/README.md**
+            **/.DS_Store**
+            **/npm-debug.log*
