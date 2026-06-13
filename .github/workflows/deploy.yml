@@ -13,17 +13,31 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      # -------------------------
+      # Node setup with caching
+      # -------------------------
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
+          cache: npm
+          cache-dependency-path: package-lock.json
 
+      # -------------------------
+      # Install dependencies (cached)
+      # -------------------------
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      - name: Build Tailwind CSS
+      # -------------------------
+      # Build Tailwind CSS
+      # -------------------------
+      - name: Build assets
         run: npm run build
 
+      # -------------------------
+      # FTP Deploy
+      # -------------------------
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -37,3 +51,6 @@ jobs:
             **/.git*
             **/.github/**
             **/node_modules/**
+            **/src/**
+            tailwind.config.js
+            postcss.config.js
