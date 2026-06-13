@@ -8,7 +8,6 @@ Thumbs.db
 
 # Node modules
 node_modules/
-package-lock.json
 yarn.lock
 
 # Environment variables
