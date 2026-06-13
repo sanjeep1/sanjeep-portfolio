@@ -311,11 +311,6 @@
     }
 
     /* ──── ABOUT ──── */
-    .about-text {
-        @apply text-sp-text-secondary font-light leading-loose;
-        font-size: 1.05rem;
-    }
-
     .about-text p {
         @apply mb-5;
     }
@@ -326,176 +321,45 @@
     }
 
     .skill-item {
-        @apply flex items-center gap-3 py-3.5 font-mono text-xs tracking-wide text-sp-text-secondary border-b transition-all duration-200 hover:text-sp-text-primary;
         border-color: var(--border);
-        letter-spacing: 0.02em;
     }
 
     .skill-item::before {
-        content: '▸';
+        content: "▸";
         color: var(--accent);
         font-size: 0.6rem;
         flex-shrink: 0;
     }
 
-    .skill-item:hover {
-        padding-left: 0.5rem;
-    }
-
-    .about-img-frame {
-        @apply overflow-hidden;
-        border-radius: 4px;
-        background: var(--bg-3);
-        aspect-ratio: 4/5;
-    }
-
-    .about-img-frame img {
-        @apply w-full h-full object-cover;
-        transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .about-img-frame:hover img {
-        transform: scale(1.03);
-    }
-
-    .about-img-placeholder {
-        @apply w-full h-full flex flex-col items-center justify-center gap-3;
-        background: var(--surface);
-        color: var(--text-muted);
-        font-family: var(--font-mono);
-        font-size: 0.7rem;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-    }
-
-    .about-img-placeholder .initials {
-        @apply font-display font-extrabold;
-        font-size: 5rem;
-        color: var(--border-hover);
-        letter-spacing: -0.04em;
-    }
-
     .about-img-deco {
-        position: absolute;
-        bottom: -1.5rem;
-        left: -1.5rem;
-        width: 120px;
-        height: 120px;
-        border: 1px solid var(--border);
-        border-radius: 2px;
-        background: var(--accent-dim);
-        z-index: -1;
-    }
-
-    .about-img-tag {
-        position: absolute;
-        top: 1.5rem;
-        right: -1.5rem;
-        background: var(--accent);
-        color: var(--bg);
-        @apply font-mono tracking-widest uppercase font-medium;
-        font-size: 0.65rem;
-        padding: 0.6rem 0.9rem;
-        border-radius: 2px;
-        writing-mode: vertical-rl;
+        border-color: var(--border);
     }
 
     /* ──── SERVICES ──── */
-    .services-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1px;
-        background: var(--border);
-    }
-
-    @media (max-width: 768px) {
-        .services-grid {
-            grid-template-columns: 1fr;
-        }
-    }
-
-    @media (min-width: 769px) and (max-width: 1100px) {
-        .services-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-
-    .service-card {
-        @apply relative overflow-hidden;
-        background: var(--bg-2);
-        padding: 2.5rem;
-        transition: background 0.3s ease;
-    }
-
+    
     .service-card::after {
         content: '';
         position: absolute;
-        bottom: 0;
         left: 0;
         right: 0;
+        bottom: 0;
         height: 2px;
         background: var(--accent);
+
         transform: scaleX(0);
         transform-origin: left;
-        transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-    }
 
-    .service-card:hover {
-        background: var(--surface);
+        transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .service-card:hover::after {
         transform: scaleX(1);
     }
 
-    .service-num {
-        @apply font-mono text-sp-accent mb-6;
-        font-size: 0.65rem;
-        letter-spacing: 0.18em;
-    }
-
-    .service-icon {
-        @apply mb-5;
-        font-size: 2rem;
-        line-height: 1;
-    }
-
-    .service-title {
-        @apply font-display font-semibold mb-3;
-        font-size: 1.3rem;
-        letter-spacing: -0.02em;
-    }
-
-    .service-desc {
-        @apply text-sp-text-secondary font-light leading-relaxed;
-        font-size: 0.9rem;
-    }
-
-    .service-tags {
-        @apply flex flex-wrap gap-2 mt-6;
-    }
-
-    .service-tag {
-        @apply font-mono text-sp-text-muted;
-        font-size: 0.62rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        border: 1px solid var(--border);
-        padding: 0.28rem 0.65rem;
-        border-radius: 2px;
-        transition: color 0.2s, border-color 0.2s;
-    }
-
-    .service-card:hover .service-tag {
-        color: var(--text-secondary);
-        border-color: var(--border-hover);
-    }
-
     /* ──── PROJECTS ──── */
     .project-item {
-        @apply flex items-center gap-12 py-8 no-underline transition-all duration-500 border-b relative overflow-hidden;
-        color: inherit;
         border-color: var(--border);
+        color: inherit;
     }
 
     .project-item::before {
@@ -506,66 +370,19 @@
         bottom: 0;
         width: 2px;
         background: var(--accent);
+
         transform: scaleY(0);
         transform-origin: bottom;
-        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
 
-    .project-item:hover {
-        padding-left: 1.5rem;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .project-item:hover::before {
         transform: scaleY(1);
     }
 
-    .project-num {
-        @apply font-mono text-sp-text-muted;
-        font-size: 0.7rem;
-        letter-spacing: 0.1em;
-        min-width: 2rem;
-    }
-
-    .project-info {
-        @apply flex flex-col gap-2;
-    }
-
-    .project-name {
-        @apply font-display font-semibold;
-        font-size: 1.5rem;
-        letter-spacing: -0.02em;
-        transition: color 0.2s;
-    }
-
     .project-item:hover .project-name {
         color: var(--accent);
-    }
-
-    .project-meta {
-        @apply flex items-center gap-4 font-mono text-sp-text-muted;
-        font-size: 0.7rem;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-    }
-
-    .project-tags {
-        @apply flex gap-2 flex-wrap;
-    }
-
-    .project-tag {
-        @apply font-mono text-sp-text-secondary;
-        font-size: 0.62rem;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        padding: 0.22rem 0.55rem;
-        border-radius: 2px;
-        background: var(--bg-3);
-    }
-
-    .project-arrow {
-        @apply text-sp-text-muted ml-auto flex-shrink-0;
-        font-size: 1.2rem;
-        transition: color 0.2s, transform 0.3s;
     }
 
     .project-item:hover .project-arrow {
@@ -574,41 +391,6 @@
     }
 
     /* ──── TECH STACK MARQUEE ──── */
-    .stack-scroll-wrap {
-        @apply overflow-hidden relative;
-    }
-
-    .stack-scroll-wrap::before,
-    .stack-scroll-wrap::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 140px;
-        z-index: 2;
-        pointer-events: none;
-    }
-
-    .stack-scroll-wrap::before {
-        left: 0;
-        background: linear-gradient(to right, var(--bg-2), transparent);
-    }
-
-    .stack-scroll-wrap::after {
-        right: 0;
-        background: linear-gradient(to left, var(--bg-2), transparent);
-    }
-
-    .stack-track {
-        display: flex;
-        width: max-content;
-        animation: scrollLeft 32s linear infinite;
-    }
-
-    .stack-track:hover {
-        animation-play-state: paused;
-    }
-
     @keyframes scrollLeft {
         from {
             transform: translateX(0);
@@ -618,30 +400,7 @@
             transform: translateX(-50%);
         }
     }
-
-    .stack-item {
-        @apply flex items-center gap-2.5 font-mono text-sp-text-secondary;
-        font-size: 0.8rem;
-        letter-spacing: 0.05em;
-        padding: 0 2.5rem;
-        border-right: 1px solid var(--border);
-        height: 52px;
-        white-space: nowrap;
-        transition: color 0.2s;
-    }
-
-    .stack-item:hover {
-        color: var(--text-primary);
-    }
-
-    .stack-dot {
-        @apply flex-shrink-0;
-        width: 6px;
-        height: 6px;
-        background: var(--accent);
-        border-radius: 50%;
-    }
-
+    
     /* ──── CONTACT ──── */
     .contact-big {
         @apply font-display font-extrabold leading-none mb-8;
@@ -714,6 +473,7 @@
         border: 1px solid var(--border);
         @apply text-sp-text-primary font-light;
         padding: 0.85rem 1rem;
+        margin-bottom: 1rem;
         border-radius: 2px;
         font-family: var(--font-body);
         font-size: 0.9rem;
@@ -738,20 +498,6 @@
 
     .form-textarea {
         height: 130px;
-    }
-
-    /* Style select like input */
-    select.form-input {
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23888580' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
-        background-repeat: no-repeat;
-        background-position: right 1rem center;
-        padding-right: 2.5rem;
-        cursor: pointer;
-    }
-
-    select.form-input option {
-        background: var(--bg-3);
-        color: var(--text-primary);
     }
 
     .form-error {
@@ -792,16 +538,6 @@
 
     .form-status.error {
         color: #ef4444;
-    }
-
-    /* ──── BACK TO TOP ──── */
-    #sp-back-top {
-        border-radius: 2px;
-    }
-
-    #sp-back-top.visible {
-        opacity: 1;
-        pointer-events: auto;
     }
 
     /* ──── RESPONSIVE ──── */

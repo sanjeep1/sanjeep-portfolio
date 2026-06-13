@@ -26,15 +26,6 @@
     </nav>
 </footer>
 
-<!-- Back to top -->
-<button id="sp-back-top"
-        aria-label="<?php esc_attr_e( 'Back to top', 'sanjeep-portfolio' ); ?>"
-        class="fixed bottom-8 right-8 z-40 w-10 h-10 bg-sp-accent text-sp-bg
-               flex items-center justify-center text-lg font-bold
-               opacity-0 pointer-events-none transition-all duration-300
-               hover:-translate-y-1 hover:bg-sp-text-primary">
-    ↑
-</button>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
 
