@@ -57,12 +57,19 @@ $services = function_exists( 'get_field' ) ? get_field( 'services_list') : [];
                     <?php echo esc_html($num); ?>
                 </div>
 
-                <?php if ($icon) : ?>
-                    <div class="mb-5 text-[2rem] leading-none"
-                        aria-hidden="true">
-                        <?php echo esc_html($icon); ?>
+                <?php if ($icon) :
+                    $svg = file_get_contents(get_attached_file($icon));
+                    if ($svg) :
+                ?>
+                    <div class="mb-5 text-[2rem] leading-none" aria-hidden="true">
+                        <div class="w-8 h-8 text-current">
+                            <?php echo $svg; ?>
+                        </div>
                     </div>
-                <?php endif; ?>
+                <?php
+                    endif;
+                endif;
+                ?>
 
                 <h3 class="font-display font-semibold text-[1.3rem] tracking-[-0.02em] mb-3">
                     <?php echo esc_html($title); ?>
